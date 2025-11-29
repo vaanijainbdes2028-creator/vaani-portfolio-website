@@ -1,0 +1,318 @@
+/* --- 1. Global Variables & Base Styles --- */
+:root {
+    /* Colors derived from the Figma prototype */
+    --color-dark-brown: #4A3A35;
+    --color-medium-brown: #8D725C;
+    --color-cream: #F5E5C9;
+    --color-accent-orange: #E8A74A; 
+    --color-dark-text: #2C201C;
+    
+    /* New modal background colors */
+    --color-light-green: #A9D18E;
+    --color-dark-grey: #615C5A;
+
+    /* Fonts (Ensure these names match the Google Font link in index.html) */
+    --font-decorative: 'Crete Round', serif; 
+    --font-heading: 'Playfair Display', serif; 
+    --font-body: 'Poppins', sans-serif;       
+}
+
+body {
+    background-color: var(--color-cream);
+    color: var(--color-dark-text);
+    font-family: var(--font-body);
+    scroll-behavior: smooth;
+    padding-top: 65px; /* Add padding to stop content from hiding under the fixed nav */
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--font-heading);
+    color: var(--color-dark-text);
+}
+
+/* Custom heading style matching the prototype's ornate font */
+.decorative-heading {
+    font-family: var(--font-decorative);
+}
+
+/* Custom utility classes */
+.text-cream { color: var(--color-cream) !important; }
+.text-dark-text { color: var(--color-dark-text) !important; }
+
+.section-heading {
+    font-size: 3rem;
+    color: var(--color-dark-brown);
+    border-bottom: 3px solid var(--color-medium-brown);
+    display: inline-block;
+    padding-bottom: 5px;
+    margin-bottom: 3rem !important;
+    font-family: var(--font-decorative);
+}
+
+/* 🧭 NAVIGATION BAR STYLING */
+.main-nav {
+    background-color: rgba(74, 58, 53, 0.95); 
+    width: 100%;
+    z-index: 1030; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    padding: 10px 20px !important; 
+}
+
+.nav-link-main {
+    color: var(--color-cream); 
+    text-decoration: none;
+    font-family: var(--font-decorative);
+    font-weight: bold;
+    font-size: 1.1rem;
+    padding: 5px 10px; 
+    transition: color 0.3s;
+}
+
+.nav-link-main:hover {
+    color: var(--color-accent-orange);
+}
+
+
+/* --- 2. HERO SECTION Styling --- */
+#hero-section {
+    background-color: var(--color-accent-orange);
+    border-radius: 0 0 50px 0;
+}
+
+.hero-text h1 {
+    font-size: 5rem; 
+    color: var(--color-cream);
+    font-family: var(--font-decorative);
+}
+
+.hero-text p {
+    color: var(--color-cream);
+    font-family: var(--font-decorative);
+    font-size: 1.5rem;
+}
+
+.profile-image {
+    border: 5px solid var(--color-medium-brown);
+    border-radius: 10px;
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+}
+
+/* --- 3. ABOUT SECTION Styling --- */
+.education-card {
+    background-color: var(--color-medium-brown);
+    color: var(--color-cream);
+    padding: 1.5rem !important;
+    border-radius: 8px;
+    box-shadow: 4px 4px 0 0 var(--color-dark-text);
+}
+
+.explore-btn {
+    background-color: var(--color-accent-orange);
+    color: var(--color-dark-text);
+    font-family: var(--font-decorative);
+    font-size: 1.25rem;
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: none;
+    transition: background-color 0.3s;
+}
+
+.explore-btn:hover {
+    background-color: var(--color-dark-brown);
+    color: var(--color-cream);
+}
+
+
+/* --- 4. WORK/PROJECTS SECTION STYLING --- */
+.bg-dark-texture {
+    background-color: var(--color-dark-brown);
+}
+
+.project-card {
+    background-color: var(--color-cream);
+    padding: 15px;
+    border-radius: 8px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+    border: 3px solid var(--color-medium-brown); 
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+.project-cover {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    border: 1px solid var(--color-medium-brown);
+}
+
+
+/* --- 5. CONTACT SECTION STYLING --- */
+.contact-texture {
+    background-color: var(--color-cream);
+}
+
+.contact-link {
+    color: var(--color-dark-text);
+    text-decoration: none;
+    transition: color 0.3s;
+    font-family: var(--font-decorative);
+}
+
+.contact-link:hover {
+    color: var(--color-medium-brown);
+}
+
+.back-to-home-btn {
+    background-color: var(--color-medium-brown);
+    color: var(--color-cream);
+    font-family: var(--font-decorative);
+    border: 2px solid var(--color-dark-text);
+    border-radius: 5px;
+    padding: 10px 30px;
+    font-size: 1.1rem;
+}
+
+
+/* --- 6. MODAL (PROJECT DETAIL) STYLING --- */
+.project-modal-content {
+    border: none;
+}
+
+.modal-project-img {
+    max-width: 450px; 
+    height: auto;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    border: 5px solid var(--color-medium-brown);
+}
+
+/* Back to Work Button */
+.back-to-work-btn {
+    background-color: var(--color-accent-orange);
+    color: var(--color-dark-text);
+    font-family: var(--font-decorative);
+    padding: 10px 30px;
+    font-size: 1.25rem;
+    border-radius: 50px;
+}
+
+/* New: View PDF Button */
+.view-pdf-btn {
+    background-color: var(--color-dark-text);
+    color: var(--color-cream);
+    font-family: var(--font-decorative);
+    padding: 10px 25px;
+    font-size: 1.1rem;
+    border-radius: 50px;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s;
+}
+
+.view-pdf-btn:hover {
+    background-color: var(--color-medium-brown);
+    color: var(--color-dark-text);
+}
+
+/* Modal Texture/Color Classes */
+.bg-green-texture {
+    background-color: var(--color-light-green); 
+    color: var(--color-dark-text);
+}
+
+.bg-dark-grey-texture {
+    background-color: var(--color-dark-grey); 
+    color: var(--color-cream);
+}
+
+.bg-accent-orange-texture {
+    background-color: var(--color-accent-orange);
+    color: var(--color-dark-text);
+}
+
+/* --- 7. Project Modal Arrows Styling --- */
+
+.project-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    background-color: var(--color-medium-brown);
+    color: var(--color-cream);
+    border: none;
+    border-radius: 50%;
+    z-index: 10;
+    font-size: 2rem;
+    line-height: 1;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+}
+
+.project-arrow:hover {
+    opacity: 1;
+    background-color: var(--color-dark-brown);
+}
+
+.prev-arrow {
+    left: 20px;
+}
+
+.next-arrow {
+    right: 20px;
+}
+
+/* Ensure modal body allows for arrow positioning */
+.modal-body {
+    position: relative; 
+    padding-left: 80px; 
+    padding-right: 80px;
+}
+
+
+/* --- 8. Responsive Adjustments --- */
+@media (max-width: 768px) {
+    body {
+        padding-top: 55px; /* Adjust padding for smaller nav on mobile */
+    }
+    .hero-image-container {
+        order: -1; 
+        text-align: center;
+    }
+    .hero-text {
+        text-align: center !important;
+        margin-top: 2rem;
+    }
+    .hero-text h1 {
+        font-size: 3.5rem;
+    }
+    .section-heading {
+        font-size: 2.5rem;
+    }
+    .modal-project-img {
+        max-width: 90%;
+    }
+    .project-arrow {
+        width: 40px;
+        height: 40px;
+        font-size: 1.5rem;
+    }
+    .prev-arrow {
+        left: 5px;
+    }
+    .next-arrow {
+        right: 5px;
+    }
+    .modal-body {
+        padding-left: 50px; 
+        padding-right: 50px;
+    }
+    .view-pdf-btn {
+        margin-top: 15px !important;
+    }
+}
